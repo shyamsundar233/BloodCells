@@ -156,7 +156,7 @@ def conv_block_td(input_tensor, kernel_size, filters, stage, block, input_shape,
 def nn_base(input_tensor=None, trainable=False):
 
     # Determine proper input shape
-    if K.common.image_dim_ordering() == 'th':
+    if K.image_data_format() == 'th':
         input_shape = (3, None, None)
     else:
         input_shape = (None, None, 3)
